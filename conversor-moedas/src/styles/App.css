@@ -84,6 +84,8 @@ select {
   border: none;
   padding: 14px;
   border-radius: 10px;
+  border: 1px solid white;
+  outline: auto;
   margin-top: 1rem;
   cursor: pointer;
 }
@@ -99,10 +101,11 @@ select {
   justify-content: center;
   align-items: center;
   border-radius: 7px;
+  flex-direction: column;
 }
 
 
 .result > h2 {
   font-size: 5rem;
-  text-shadow: 4px 4px 10px black;
+  text-shadow: 6px 6px 15px black;
 }

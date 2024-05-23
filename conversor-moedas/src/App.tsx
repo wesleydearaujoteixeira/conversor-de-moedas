@@ -1,7 +1,9 @@
 import { useState } from 'react';
-import './App.css';
-import { BsCashCoin } from "react-icons/bs";
+import './styles/App.css';
+import './styles/responsive.css';
 
+
+import { BsCashCoin } from "react-icons/bs";
 
 
 function App() {
@@ -15,7 +17,7 @@ function App() {
   const converterMoeda = () => {
 
     if(quantia == '' || quantia == '0'){
-      alert(' Invalido')
+      alert('Operação inválida, Digite um valor!')
     }
 
     const host = "api.frankfurter.app";
@@ -39,8 +41,10 @@ function App() {
         <div className='main'>
           <h1> Conversor de Moedas  <BsCashCoin /> </h1>
             <div className='container-value'>
-              <label  className='label' htmlFor='value'> Quantia </label>
-              <input type="text" id='value'  value={quantia} onChange={e => setQuantia(e.target.value)} />
+              <label  className='label' htmlFor='value'> Valor a converter </label>
+              <input type="text" id='value'
+              placeholder='Digite algum valor'    
+              value={quantia} onChange={e => setQuantia(e.target.value)} />
             </div>
 
             <div className='select-content'>
@@ -60,7 +64,10 @@ function App() {
             </div>
 
             <button className='button' onClick={() => converterMoeda()}> Converter </button>
-            <div className='result'> <h2> {convertCoin(Number(resultado))}</h2> </div>
+            <div className='result'>
+              <h2> Resultado: </h2> 
+              <h2>{convertCoin(Number(resultado))}</h2> 
+            </div>
         </div>     
       </>
   )
